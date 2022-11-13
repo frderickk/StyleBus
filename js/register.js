@@ -129,7 +129,7 @@ registrar=() =>{
           }); 
     }
 
-    if (rdni.length < 6 && rdni.length > 0){
+    if (rdni.length < 7 && rdni.length > 0){
         swal({
             title: "El DNI es menor de lo permitido",
             text: "",
