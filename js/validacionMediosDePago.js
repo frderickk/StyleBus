@@ -1,6 +1,6 @@
-validacionMediosDePago=() =>{
+validartarjeta=() =>{
     
-    const numeroDeTarjeta= document.getElementById("rtarjeta");
+    const rtarjeta= document.getElementById("rtarjeta").value;
     const nombreYApellido= document.getElementById("tnombres").value;
     const fechaDeExpiracion= document.getElementById("rfecha").value;
     const cuentaMP= document.getElementById("rcuenta-mercado").value;
@@ -10,19 +10,21 @@ validacionMediosDePago=() =>{
 
    
     const expresiones = {
-        numeroDeTarjeta: /[1-9]{16}/,
-        nombreYApellido:  /^[A-Z]/,
-        
+        vacio: /^$/
+         }
+
+         if (expresiones.vacio.test(rtarjeta)){
+          swal({
+              title: "El numero de tarjeta esta vacio",
+              text: "",
+              icon: "warning",
+              button: "Volver a ingresar dato",
+            });
+
+          
+      }
 
 
-
-
-          cuenta: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/ ,
-          pass: /^(?=(?:.*[A-Z]){1})(?=(?:.*[a-z]){1})\S{8,}$/, 
-          rnombre: /^[A-z]/  ,
-          rapellido: /^[A-z]/ ,
-          rdomicilio: /^([a-zA-Z_\s]{1,}\d{1,})+|(\d{1,}[a-zA-Z_]{1,})+$ / ,   
-          dni: /[1-9]{8,9}/ }
 
 
     
