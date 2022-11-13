@@ -31,11 +31,14 @@
                 <li><a href="#" onclick="formularioPaquetes()">Paquetes</a></li>
             </ul>
         </div>
+
         <div>
             <form id="form">
+
+             <!--Formulario Pasajes-->
                 <div class="grid" id="contenedor-formulario-pasajes">
                     <div id="selecciones-pasajes">
-                        <div >
+                        <div>
                             <label for="validation-form-pasajes">Terminal de salida</label>
                             <select class="form-select" id="ter-salida" required>
                                 <option value="Retiro">Retiro</option>
@@ -58,14 +61,14 @@
 
                     <div id="ida-vuelta">
                         <div>
-                            <label for="validation-form-pasajes"><input type="checkbox" id="checkbox-ida-vuelta">Ida y vuelta</label>
+                            <label for="validation-form-pasajes"><input type="checkbox" id="checkbox-ida-vuelta" onchange="habilitarCheckIdaVuelta()">Ida y vuelta</label>
                         </div>
                         <div>
                             <label for="validation-form-pasajes" class="form-label">Fecha de salida</label>
                             <input type="date" class="form-control" required="" id="datetime" min="2022-11-12" max="2023-17-05">
                             <span class="validity"></span>
                         </div>
-                        <div>
+                        <div id ="content" style="display: none;">
                             <label for="validation-form-pasajes" class="form-label">Fecha de vuelta</label>
                             <input type="date" class="form-control" required="" id="datetime" min="2022-12-12" max="2023-17-06">
                             <span class="validity"></span>
@@ -98,9 +101,13 @@
                             </select>
                         </div>
                         <div>
-                            <button type="button" onclick="//mostrarPasajesDisponibles()" id="cargar-pasajes" class="btn btn-primary">Ver disponibilidad</button>
+                      <!----     <button type="button" onclick="validarPasajes()" id="cargar-pasajes" class="btn btn-primary">Ver disponibilidad</button>--> 
+                            <index type="button" onclick="validarProductos()" id="cargar-pasajes" value = "Ver disponibilidad" class="btn btn-primary">
                         </div>
                 </div>
+
+                 <!--Formulario Excursiones-->
+
                 <div id="contenedor-formulario-excursiones"class="grid" style="display:none">
                     <div>
                         <label for="validation-form-pasajes">Terminal de Destino</label>
@@ -112,7 +119,7 @@
                         </select>
                     </div>
                     <div>
-                        <label for="validation-form-pasajes"><input type="checkbox" id="checkbox-ida-vuelta">Ida y vuelta</label>
+                        <label for="validation-form-pasajes"><input type="checkbox" id="checkbox-ida-vuelta" >Ida y vuelta</label>
                     </div>
                     <div>
                         <label for="validation-form-pasajes" class="form-label">Fecha de salida</label>
@@ -132,9 +139,12 @@
                         <input type="number" class="form-control" id="cantidad-discapacitados" min="0">
                     </div>
                     <div>
-                        <button type="button" onclick="//mostrarExcursionesDisponibles()" id="cargar-excursiones" class="btn btn-primary">Ver disponibilidad</button>
+                        <index type="button" onclick="" id="cargar-pasajes" value = "Ver disponibilidad" class="btn btn-primary">
                     </div>
                 </div >
+
+                <!--Formulario Paquetes-->
+
                 <div id="contenedor-formulario-paquetes"class="grid" style="display:none">
                     <div>
                         <label for="validation-form-pasajes">Terminal de salida</label>
@@ -155,18 +165,24 @@
                         </select>
                     </div>
                     <div>
-                        <label for="validation-form-pasajes"><input type="checkbox" id="checkbox-ida-vuelta">Ida y vuelta</label>
+                        <label for="validation-form-pasajes">
+                            <input type="checkbox" id="checkbox-ida-vuelta" onchange="habilitarCheckIdaVuelta()" >Ida y vuelta
+                        </label>
                     </div>
                     <div>
                         <label for="validation-form-pasajes" class="form-label">Fecha de salida</label>
                         <input type="date" class="form-control" required="" id="datetime" min="2022-11-12" max="2023-17-05">
                         <span class="validity"></span>
                     </div>
-                    <div>
+
+                    <div id ="content" style="display: none;">
                         <label for="validation-form-pasajes" class="form-label">Fecha de vuelta</label>
                         <input type="date" class="form-control" required="" id="datetime" min="2022-12-12" max="2023-17-06">
                         <span class="validity"></span>
                     </div>
+
+
+
                     <div>
                         <label for="validation-form-pasajes" class="form-label">Cantidad de adultos</label>
                         <input type="number" class="form-control" id="cantidad-adultos" min="0">
@@ -188,22 +204,26 @@
                         </select>
                     </div>
                     <div>
-                        <button type="button" onclick="//mostrarPaquetesDisponibles()" id="cargar-paquetes" class="btn btn-primary">Ver disponibilidad</button>
+                        <index type="button" onclick="validarProductos()" id="cargar-pasajes" value = "Ver disponibilidad" class="btn btn-primary">
                     </div>
                 </div>
             </form>
         </div>
+
         <div id="carrusel">
             <div class="carruselImagenes fade">
                 <img src="img/termas.jpg" style="width:50%">
-            </div>
+            </div> 
             <!--<div id="carruselImagenes fade">
                 <img src="img/tigre.jpg" style="width:50%">-->
             </div>
         </div>
     </div>
+
     <hr>
+    
     <script src="js/filtros.js"></script>
-    <script src="js/validacionesPasajes.js"></script>
+    <script src="js/validacionesProductos.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
 </body>
 </html>
