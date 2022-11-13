@@ -9,20 +9,30 @@ registrar=() =>{
     const rdni= document.getElementById("rdni").value;
 
     const expresionesNombres = {
-          rnombre1: /[0-9]/ ,
-          rnombre2: /^$ /
+          numeros: /[0-9]/,
+          caracterEspecial: /[ -/:-@[-`{-■]/,
+          vacio: /^$/
           }
 
-    if (expresionesNombres.rnombre1.test(rnombre)){
+    if (expresionesNombres.numeros.test(rnombre)){
         swal({
-            title: "Nombre contiene numero",
+            title: "Nombre tiene un numero",
             text: "",
             icon: "warning",
             button: "Volver a ingresar dato",
           }); 
     }
 
-    if (expresionesNombres.rnombre2.test(rnombre)){
+    if (expresionesNombres.caracterEspecial.test(rnombre)){
+        swal({
+            title: "Nombre tiene algun caracter especial",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    if (expresionesNombres.vacio.test(rnombre)){
         swal({
             title: "Nombre esta vacio",
             text: "",
@@ -30,8 +40,5 @@ registrar=() =>{
             button: "Volver a ingresar dato",
           }); 
     }
-
-
-
 }
 
