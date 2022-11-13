@@ -269,5 +269,18 @@ registrar=() =>{
             button: "Volver a ingresar dato",
           }); 
     } 
+
+         /* ------------validacion de todos los campos vacios---------- */
+
+    if (expresionesNombres.vacio.test(rnombre) && expresionesApellidos.vacio.test(rapellido) && expresionesDNI.vacio.test(rdni) && 
+        expresionesDomicilios.vacio.test(rdomicilio) && expresionesEmail.vacio.test(email) && expresionesPassword.vacio.test(password)){
+        swal({
+            title: "Los campos no deben estar vacios",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    } 
+
 }
 
