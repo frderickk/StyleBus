@@ -40,5 +40,23 @@ registrar=() =>{
             button: "Volver a ingresar dato",
           }); 
     }
+
+    if (rnombre.length < 3){
+        swal({
+            title: "El nombre es menor a lo permitido",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    if (rnombre.length > 20){
+        swal({
+            title: "El nombre es mayor a lo permitido",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
 }
 
