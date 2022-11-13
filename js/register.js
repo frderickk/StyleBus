@@ -14,6 +14,12 @@ registrar=() =>{
           vacio: /^$/
           }
 
+    const expresionesApellidos = {
+            numeros: /[0-9]/,
+            caracterEspecial: /[ -/:-@[-`{-■]/,
+            vacio: /^$/
+            }
+
     if (expresionesNombres.numeros.test(rnombre)){
         swal({
             title: "Nombre tiene un numero",
@@ -58,5 +64,56 @@ registrar=() =>{
             button: "Volver a ingresar dato",
           }); 
     }
+/* -----------------apellido---------- */
+
+
+    if (rapellido.length > 20){
+        swal({
+            title: "El apellido es mayor a lo permitido",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    if (rapellido.length < 3){
+        swal({
+            title: "El apellido es menor a lo permitido",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    if (expresionesApellidos.vacio.test(rapellido)){
+        swal({
+            title: "Apellido esta vacio",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    if (expresionesApellidos.caracterEspecial.test(rapellido)){
+        swal({
+            title: "Apellido tiene algun caracter especial",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    if (expresionesApellidos.numeros.test(rapellido)){
+        swal({
+            title: "Apellido tiene un numero",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    
+
+
 }
 
