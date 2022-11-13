@@ -27,23 +27,14 @@
     <div>
         <div id="barraDeProductos">
             <ul class="barraProd">
-                <li><a class="actual" href="">Pasajes</a></li>
-                <li><a href="index_excursiones.html">Excursiones</a></li>
+                <li><a href="index.html">Pasajes</a></li>
+                <li><a class="actual"href="">Excursiones</a></li>
                 <li><a href="index_paquetes.html">Paquetes</a></li>
             </ul>
         </div>
         <div>
             <form>
                 <div>
-                    <div>
-                        <label for="validation-form-pasajes">Terminal de salida</label>
-                        <select class="form-select" id="ter-salida" required>
-                            <option value="Retiro">Retiro</option>
-                            <option value="Mar del plata">Mar del plata</option>
-                            <option value="Cordoba">Córdoba</option>
-                            <option value="Rosario">Rosario</option>
-                        </select>
-                    </div>
                     <div>
                         <label for="validation-form-pasajes">Terminal de Destino</label>
                         <select class="form-select" id="ter-destino" required>
@@ -62,11 +53,6 @@
                         <span class="validity"></span>
                     </div>
                     <div>
-                        <label for="validation-form-pasajes" class="form-label">Fecha de vuelta</label>
-                        <input type="date" class="form-control" required="" id="datetime" min="2022-12-12" max="2023-17-06">
-                        <span class="validity"></span>
-                    </div>
-                    <div>
                         <label for="validation-form-pasajes" class="form-label">Cantidad de adultos</label>
                         <input type="number" class="form-control" id="cantidad-adultos" min="0">
                     </div>
@@ -77,14 +63,6 @@
                     <div>
                         <label for="validation-form-pasajes" class="form-label">Cantidad de discapacitados</label>
                         <input type="number" class="form-control" id="cantidad-discapacitados" min="0">
-                    </div>
-                    <div>
-                        <label for="validation-form-pasajes">Categoría de omnibus</label>
-                        <select class="form-select" id="categoria-omnibus" required>
-                            <option value="Estandar">Estandar</option>
-                            <option value="Estandar plus">Estandar plus</option>
-                            <option value="Premium">Premium</option>
-                        </select>
                     </div>
                 </div>
             </form>
