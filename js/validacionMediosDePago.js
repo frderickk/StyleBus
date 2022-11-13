@@ -1,7 +1,7 @@
 validartarjeta=() =>{
     
     const rtarjeta= document.getElementById("rtarjeta").value;
-    const nombreYApellido= document.getElementById("tnombres").value;;
+    const nombreYApellido= document.getElementById("tnombres").value;
    
     
    
@@ -123,5 +123,118 @@ if (expresionesEmail.vacio.test(cuentaMP)){
 } 
     
      }
+
+  
+     validarTarjetaBancaria=() =>{
+
+      const CBUCVU= document.getElementById("rnumero-bancaria").value;
+      const DNI= document.getElementById("rdni-bancaria").value;
+
+      const expresionesCBUCVU = {
+        letras: /[a-zA-Z]/,
+      caracterEspecial: /[!-/:-@[-`{-■]/ ,
+      vacio: /^$/
+      }
+
+    const expresionesDNI = {
+      letras: /[a-zA-Z]/,
+    caracterEspecial: /[!-/:-@[-`{-■]/ ,
+    vacio: /^$/
+    } 
+
+    if(CBUCVU.length>22)
+    swal({
+      title: "CBU/CVU excede los 22 digitos",
+      text: "",
+      icon: "warning",
+      button: "Volver a ingresar dato",
+    });
+    
+    if(CBUCVU.length<22)
+    swal({
+      title: "CBU/CVU es menor a 22 digitos",
+      text: "",
+      icon: "warning",
+      button: "Volver a ingresar dato",
+    });
+
+    if (expresionesCBUCVU.caracterEspecial.test(CBUCVU)){
+      swal({
+          title: "CBU/CVU contiene algún digito no numérico",
+          text: "",
+          icon: "warning",
+          button: "Volver a ingresar dato",
+        }); 
+    }
+
+    if (expresionesCBUCVU.vacio.test(CBUCVU)){
+      swal({
+          title: "CBU/CVU es vacío",
+          text: "",
+          icon: "warning",
+          button: "Volver a ingresar dato",
+        }); 
+    } 
+    if (expresionesCBUCVU.letras.test(CBUCVU)){
+      swal({
+          title: "CBU/CVU contiene algún digito no numérico",
+          text: "",
+          icon: "warning",
+          button: "Volver a ingresar dato",
+        }); 
+    }
+   
+    if(DNI.length<7 && DNI.length >0){
+      swal({
+        title: " DNI titular de la cuenta es menor a 7 caracteres numéricos",
+        text: "",
+        icon: "warning",
+        button: "Volver a ingresar dato",
+      });
+    }
+
+      if(DNI.length>8){
+        swal({
+          title: "DNI titular de la cuenta excede los  8 caracteres numéricos",
+          text: "",
+          icon: "warning",
+          button: "Volver a ingresar dato",
+        });
+      }
+
+        if (expresionesDNI.vacio.test(DNI)){
+          swal({
+              title: "DNI titular de la cuenta vacío",
+              text: "",
+              icon: "warning",
+              button: "Volver a ingresar dato",
+            }); 
+        }
+
+        if (expresionesDNI.letras.test(DNI)){
+          swal({
+              title: "DNI titular de la cuenta contiene algún caracter no numérico",
+              text: "",
+              icon: "warning",
+              button: "Volver a ingresar dato",
+            }); 
+        }
+
+        if (expresionesDNI.caracterEspecial.test(DNI)){
+          swal({
+              title: "DNI titular de la cuenta contiene algún caracter no numérico",
+              text: "",
+              icon: "warning",
+              button: "Volver a ingresar dato",
+            }); 
+        }
+
+    
+
+
+
+
+     }
+    
 
 
