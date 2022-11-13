@@ -45,8 +45,50 @@
             <input id="rtarjeta" type="text" placeholder="16 numeros" />
             <span>Nombre del titular </span>
             <input type="text" id="tnombres" onclick="" placeholder="tal cual este en la tarjeta" /> 
-            <span>Fecha de expiración </span>
-            <input id="rfecha" type="date"  min="2020-01-01"   max="2040-12-01" />   
+            <span>Fecha de vencimiento </span>
+                <div>
+                    <label for="validation-form-mes-venc-tc">Mes</label>
+                    <select class="form-select" id="ter-destino" required>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>  
+                </div>
+                <div>
+                    <label for="validation-form-anio-venc-tc">Año</label>
+                    <select class="form-select" id="ter-destino" required>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                    </select>  
+                </div>
+             
 
             <input type="button" onclick="validartarjeta()" value="confirmar" class="boton"  />
             <div></div>
@@ -57,8 +99,6 @@
            
         <span>Cuenta </span>
         <input id="rcuenta-mercado" type="email" />
-        <span>Contraseña </span>
-        <input  type="mppassword" /> 
         
         <input type="submit" onclick="validarTarjetaMercado()" value="confirmar" class="boton"  />
         <div></div>
@@ -68,10 +108,10 @@
 
    <div id="rcontenedor-formulario-tarjeta-bancaria"class="grid" style="display:none">
            
-    <span>Numero de cuenta bancaria </span>
+    <span>CBU/CVU </span>
     <input id="rnumero-bancaria"type="number" />
-    <span>Nombre de titular </span>
-    <input id="rnombre-bancaria"type="text" />
+    <span>DNI del titular de la cuenta </span>
+    <input id="rdni-bancaria"type="text" />
    
     <input type="submit" onclick="validarTarjetaBancaria()" value="confirmar" class="boton"  />
     <div></div>
