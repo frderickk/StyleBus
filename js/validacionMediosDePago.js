@@ -11,9 +11,9 @@ validartarjeta=() =>{
 
    
     const expresionesTarjeta = {
-      numeros: /[0-9]/,
-      caracterEspecial: /[!-/:-@[-`{-■]/,
-      vacio: /^$/,
+      letras: /[a-zA-Z]/,
+      caracterEspecial: /[ -/:-@[-`{-■]/,
+      vacio: /^$/
       
        }
 
@@ -51,7 +51,7 @@ validartarjeta=() =>{
         }); 
   }
 
-  if (!expresionesTarjeta.numeros.test(rtarjeta)){
+  if (expresionesTarjeta.letras.test(rtarjeta) || expresionesTarjeta.caracterEspecial.test(rtarjeta)){
     swal({
         title: "Número de tarjeta contiene algun caracter no numerico",
         text: "",
@@ -87,6 +87,16 @@ if(  expresionesNombreApellido.numeros.test(nombreYApellido)  ){
           button: "Volver a ingresar dato",
         });
        }
+
+    if( expresionesNombreApellido.length>20){
+      swal({
+        title: "El nombre del titular no puede ser mayor a 20",
+        text: "",
+        icon: "warning",
+        button: "Volver a ingresar dato",
+      });
+
+    }
 
   
 }
