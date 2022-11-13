@@ -34,60 +34,72 @@
         <div>
             <form id="form">
                 <div class="grid" id="contenedor-formulario-pasajes">
-                    <div>
-                        <label for="validation-form-pasajes">Terminal de salida</label>
-                        <select class="form-select" id="ter-salida" required>
-                            <option value="Retiro">Retiro</option>
-                            <option value="Mar del plata">Mar del plata</option>
-                            <option value="Cordoba">Córdoba</option>
-                            <option value="Rosario">Rosario</option>
-                        </select>
+                    <div id="selecciones-pasajes">
+                        <div >
+                            <label for="validation-form-pasajes">Terminal de salida</label>
+                            <select class="form-select" id="ter-salida" required>
+                                <option value="Retiro">Retiro</option>
+                                <option value="Mar del plata">Mar del plata</option>
+                                <option value="Cordoba">Córdoba</option>
+                                <option value="Rosario">Rosario</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="validation-form-pasajes">Terminal de Destino</label>
+                            <select class="form-select" id="ter-destino" required>
+                                <option value="Retiro">Retiro</option>
+                                <option value="Mar del plata">Mar del plata</option>
+                                <option value="Cordoba">Córdoba</option>
+                                <option value="Rosario">Rosario</option>
+                            </select>
+                        </div>
                     </div>
-                    <div>
-                        <label for="validation-form-pasajes">Terminal de Destino</label>
-                        <select class="form-select" id="ter-destino" required>
-                            <option value="Retiro">Retiro</option>
-                            <option value="Mar del plata">Mar del plata</option>
-                            <option value="Cordoba">Córdoba</option>
-                            <option value="Rosario">Rosario</option>
-                        </select>
+
+                    <div id="ida-vuelta">
+                        <div>
+                            <label for="validation-form-pasajes"><input type="checkbox" id="checkbox-ida-vuelta">Ida y vuelta</label>
+                        </div>
+                        <div>
+                            <label for="validation-form-pasajes" class="form-label">Fecha de salida</label>
+                            <input type="date" class="form-control" required="" id="datetime" min="2022-11-12" max="2023-17-05">
+                            <span class="validity"></span>
+                        </div>
+                        <div>
+                            <label for="validation-form-pasajes" class="form-label">Fecha de vuelta</label>
+                            <input type="date" class="form-control" required="" id="datetime" min="2022-12-12" max="2023-17-06">
+                            <span class="validity"></span>
+                        </div>
                     </div>
-                    <div>
-                        <label for="validation-form-pasajes"><input type="checkbox" id="checkbox-ida-vuelta">Ida y vuelta</label>
+                    
+                    
+                    <div id="cantidades"
+                        <div>
+                            <label for="validation-form-pasajes" class="form-label">Cantidad de adultos</label>
+                            <input type="number" class="form-control-cantidades" id="cantidad-adultos" min="0">
+                        </div>
+                        <div>
+                            <label for="validation-form-pasajes" class="form-label">Cantidad de menores</label>
+                            <input type="number" class="form-control-cantidades" id="cantidad-menores" min="0">
+                        </div>
+                        <div>
+                            <label for="validation-form-pasajes" class="form-label">Cantidad de discapacitados</label>
+                            <input type="number" class="form-control-cantidades" id="cantidad-discapacitados" min="0">
+                        </div>
                     </div>
-                    <div>
-                        <label for="validation-form-pasajes" class="form-label">Fecha de salida</label>
-                        <input type="date" class="form-control" required="" id="datetime" min="2022-11-12" max="2023-17-05">
-                        <span class="validity"></span>
-                    </div>
-                    <div>
-                        <label for="validation-form-pasajes" class="form-label">Fecha de vuelta</label>
-                        <input type="date" class="form-control" required="" id="datetime" min="2022-12-12" max="2023-17-06">
-                        <span class="validity"></span>
-                    </div>
-                    <div>
-                        <label for="validation-form-pasajes" class="form-label">Cantidad de adultos</label>
-                        <input type="number" class="form-control" id="cantidad-adultos" min="0">
-                    </div>
-                    <div>
-                        <label for="validation-form-pasajes" class="form-label">Cantidad de menores</label>
-                        <input type="number" class="form-control" id="cantidad-menores" min="0">
-                    </div>
-                    <div>
-                        <label for="validation-form-pasajes" class="form-label">Cantidad de discapacitados</label>
-                        <input type="number" class="form-control" id="cantidad-discapacitados" min="0">
-                    </div>
-                    <div>
-                        <label for="validation-form-pasajes">Categoría de omnibus</label>
-                        <select class="form-select" id="categoria-omnibus" required>
-                            <option value="Estandar">Estandar</option>
-                            <option value="Estandar plus">Estandar plus</option>
-                            <option value="Premium">Premium</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button type="button" onclick="//mostrarPasajesDisponibles()" id="cargar-pasajes" class="btn btn-primary">Ver disponibilidad</button>
-                    </div>
+
+                    <div id="seleccion-categorias"
+                        <div>
+                            <label for="validation-form-pasajes">Categoría de omnibus</label>
+                            <select class="form-select" id="categoria-omnibus" required>
+                                <option value="Estandar">Estandar</option>
+                                <option value="Estandar plus">Estandar plus</option>
+                                <option value="Premium">Premium</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button type="button" onclick="//mostrarPasajesDisponibles()" id="cargar-pasajes" class="btn btn-primary">Ver disponibilidad</button>
+                        </div>
                 </div>
                 <div id="contenedor-formulario-excursiones"class="grid" style="display:none">
                     <div>
