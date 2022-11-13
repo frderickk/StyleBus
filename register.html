@@ -43,13 +43,13 @@
          <div id="rcontenedor-formulario-tarjeta"class="grid" style="display:none">
            
             <span> numero de tarjeta</span>
-            <input id="rtarjeta" type="number" placeholder="16 numeros" min="0000000000000000" oninput="if(this.value.length > this.min.length) this.value = this.value.slice(0, this.min.length);" />
+            <input id="rtarjeta" type="number" placeholder="16 numeros" />
             <span> nombre y apellido </span>
             <input type="text" id="tnombres" onclick="" placeholder="tal cual este en la tarjeta" /> 
             <span> fecha de expiracion</span>
             <input id="rfecha" type="date"  min="2020-01-01"   max="2040-12-01" />   
 
-            <input type="submit" onclick="validartarjeta()" value="confirmar" class="boton"  />
+            <input type="button" onclick="validartarjeta()" value="confirmar" class="boton"  />
             <div></div>
             <input type="submit" onclick="volveratras()" value="atras" class="btn-atras"/>
        </div>
