@@ -1,14 +1,9 @@
 validartarjeta=() =>{
     
     const rtarjeta= document.getElementById("rtarjeta").value;
-    const nombreYApellido= document.getElementById("tnombres").value;
-    const rnombre= document.getElementById("rnombre").value;
-    const rapellido= document.getElementById("rapellido").value;
-    const fechaDeExpiracion= document.getElementById("rfecha").value;
-    const cuentaMP= document.getElementById("rcuenta-mercado").value;
-    const numeroDeCuentaBancaria= document.getElementById("rnumero-bancaria").value;
-    const nombreDeTitutar= document.getElementById("rnombre-bancaria").value;
-
+    const nombreYApellido= document.getElementById("tnombres").value;;
+   
+    
    
     const expresionesTarjeta = {
       letras: /[a-zA-Z]/,
@@ -97,6 +92,36 @@ if(  expresionesNombreApellido.numeros.test(nombreYApellido)  ){
       });
 
     }
-
   
 }
+
+validarTarjetaMercado=() =>{
+
+  const cuentaMP= document.getElementById("rcuenta-mercado").value;
+
+  const expresionesEmail = {
+    caracterEspecial: /^([\w-]|(?<!\.)\.)+[a-zA-Z0-9]@[a-zA-Z0-9]([a-zA-Z0-9\-]+)((\.([a-zA-Z]){2,9}){0,2})$/ ,
+    vacio: /^$/
+}
+
+if (!expresionesEmail.caracterEspecial.test(cuentaMP)){
+  swal({
+      title: "No se permite utilizar caracteres especiales en el email",
+      text: "",
+      icon: "warning",
+      button: "Volver a ingresar dato",
+    }); 
+}
+
+if (expresionesEmail.vacio.test(cuentaMP)){
+  swal({
+      title: "No se permite dejar vacío el email",
+      text: "",
+      icon: "warning",
+      button: "Volver a ingresar dato",
+    }); 
+} 
+    
+     }
+
+
