@@ -1,49 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Registrar</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Style Bus</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/index.css'>
+    
+    
 </head>
 <body>
-    <div class="registration-form">
-        <form>
-            <div class="form-icon">
-                <span><i class="icon icon-user"></i></span>
+    <header>
+        <div>
+            <div id="barra">
+                <ul class="barraNav">
+                    <li><a class="actual" href="index.html">Home</a></li>
+                    <!--<li><a href="paquetes.html">Paquetes</a></li>
+                    <li><a href="excursiones.html">Excursiones</a></li>-->
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <!--<li><a href="faqs.html">FAQs</a></li>-->
+                    <li><a href="iniciarSesion.html">Iniciar Sesion</a></li>
+                </ul>
             </div>
-            <div class="form-group">
-                <input type="text" class="form-control item" id="Nombre" placeholder="Nombre">
+            <h1>Style Bus</h1>
+            <br>
+        </div>
+    </header>
+    <div>
+        <div id="barraDeProductos">
+            <ul class="barraProd">
+                <li><a href="">Pasajes</a></li>
+                <li><a href="">Paquetes</a></li>
+                <li><a href="">Excursiones</a></li>
+            </ul>
+        </div>
+        <div>
+            <form>
+                <div>
+                    <div>
+                        <label for="validacion-terminal-salida">Terminal de salida</label>
+                        <select class="form-select" id="ter-salida" required>
+                            <option value="Retiro">Retiro</option>
+                            <option value="Mar del plata">Mar del plata</option>
+                            <option value="Cordoba">Córdoba</option>
+                            <option value="Rosario">Rosario</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="validacion-terminal-destino">Terminal de Destino</label>
+                        <select class="form-select" id="ter-destino" required>
+                            <option value="Retiro">Retiro</option>
+                            <option value="Mar del plata">Mar del plata</option>
+                            <option value="Cordoba">Córdoba</option>
+                            <option value="Rosario">Rosario</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="carrusel">
+            <div class="carruselImagenes fade">
+                <img src="img/termas.jpg" style="width:50%">
             </div>
-            <div class="form-group">
-                <input type="text" class="form-control item" id="Apellido" placeholder="Apellido">
+            <!--<div id="carruselImagenes fade">
+                <img src="img/tigre.jpg" style="width:50%">-->
             </div>
-            <div class="form-group">
-                <input type="number" class="form-control item" id="DNI" placeholder="DNI">
-            </div>
-
-            <div class="form-group">
-                <input type="text" class="form-control item" id="Email" placeholder="Email">
-            </div>
-
-            <div class="form-group">
-                <input type="text" class="form-control item" id="Fecha de nacimiento" placeholder="Fecha de nacimiento">
-            </div>
-
-            <div class="form-group">
-                <input type="password" class="form-control item" id="Contraceña" placeholder="Contraceña">
-            </div>
-    
-            <div class="form-group">
-                <button type="button" class="btn btn-block create-account">Create Account</button>
-            </div>
-        </form>
+        </div>
     </div>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <hr>
 </body>
+
 </html>
