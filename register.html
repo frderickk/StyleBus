@@ -12,7 +12,7 @@
 <body>
     <h1 id="titulo"> Crea tu cuenta:</h1>
     <form id="form">
-        <div class="grid" id="contenedor-formulario-principal" >
+        <div class="grid" id="rcontenedor-formulario-principal" >
             <span > Nombre: </span>
             <input id="rnombre" type="text" required> 
             <span> Apellido:</span>
@@ -39,7 +39,7 @@
 
          </div>
 
-         <div id="contenedor-formulario-tarjeta"class="grid" style="display:none">
+         <div id="rcontenedor-formulario-tarjeta"class="grid" style="display:none">
            
             <span> numero de tarjeta</span>
             <input id="rtarjeta" type="number" placeholder="16 numeros" min="0000000000000000" oninput="if(this.value.length > this.min.length) this.value = this.value.slice(0, this.min.length);" required/>
@@ -53,7 +53,7 @@
             <input type="submit" onclick="volveratras()" value="atras" class="btn-atras"/>
        </div>
 
-       <div id="contenedor-formulario-tarjeta-mercado"class="grid" style="display:none">
+       <div id="rcontenedor-formulario-tarjeta-mercado"class="grid" style="display:none">
            
         <span> Cuenta</span>
         <input id="rcuenta-mercado" type="email" required/>
