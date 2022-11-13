@@ -1,10 +1,10 @@
 
 formularioTarjeta=()=>{
     const titulo= document.getElementById("titulo");
-     const formularioTarjeta= document.getElementById("contenedor-formulario-tarjeta");
-    const furmularioPrincipal= document.getElementById("contenedor-formulario-principal");
-    const formularioTarjetaMercado= document.getElementById("contenedor-formulario-tarjeta-mercado");
-    const formularioBancaria= document.getElementById("contenedor-formulario-tarjeta-bancaria");
+     const formularioTarjeta= document.getElementById("rcontenedor-formulario-tarjeta");
+    const furmularioPrincipal= document.getElementById("rcontenedor-formulario-principal");
+    const formularioTarjetaMercado= document.getElementById("rcontenedor-formulario-tarjeta-mercado");
+    const formularioBancaria= document.getElementById("rcontenedor-formulario-tarjeta-bancaria");
    
 
     formularioTarjeta.style.display="";
@@ -17,10 +17,10 @@ formularioTarjeta=()=>{
 
 formularioMercadopago=()=>{
     const titulo= document.getElementById("titulo");
-     const formularioTarjeta= document.getElementById("contenedor-formulario-tarjeta");
-    const furmularioPrincipal= document.getElementById("contenedor-formulario-principal");
-    const formularioTarjetaMercado= document.getElementById("contenedor-formulario-tarjeta-mercado");
-    const formularioBancaria= document.getElementById("contenedor-formulario-tarjeta-bancaria");
+     const formularioTarjeta= document.getElementById("rcontenedor-formulario-tarjeta");
+    const furmularioPrincipal= document.getElementById("rcontenedor-formulario-principal");
+    const formularioTarjetaMercado= document.getElementById("rcontenedor-formulario-tarjeta-mercado");
+    const formularioBancaria= document.getElementById("rcontenedor-formulario-tarjeta-bancaria");
    
 
     formularioTarjeta.style.display="none";
@@ -32,10 +32,10 @@ formularioMercadopago=()=>{
 
 formularioBancaria=()=>{
     const titulo= document.getElementById("titulo");
-    const formularioTarjeta= document.getElementById("contenedor-formulario-tarjeta");
-   const furmularioPrincipal= document.getElementById("contenedor-formulario-principal");
-   const formularioBancaria= document.getElementById("contenedor-formulario-tarjeta-bancaria");
-   const formularioTarjetaMercado= document.getElementById("contenedor-formulario-tarjeta-mercado");
+    const formularioTarjeta= document.getElementById("rcontenedor-formulario-tarjeta");
+   const furmularioPrincipal= document.getElementById("rcontenedor-formulario-principal");
+   const formularioBancaria= document.getElementById("rcontenedor-formulario-tarjeta-bancaria");
+   const formularioTarjetaMercado= document.getElementById("rcontenedor-formulario-tarjeta-mercado");
 
    formularioTarjeta.style.display="none";
    furmularioPrincipal.style.display="none";
@@ -47,10 +47,10 @@ formularioBancaria=()=>{
 
 volveratras=(b)=>{
     const titulo= document.getElementById("titulo");
-    const formularioTarjeta= document.getElementById("contenedor-formulario-tarjeta");
-    const furmularioPrincipal= document.getElementById("contenedor-formulario-principal");
-    const formularioTarjetaMercado= document.getElementById("contenedor-formulario-tarjeta-mercado");
-    const formularioBancaria= document.getElementById("contenedor-formulario-tarjeta-bancaria");
+    const formularioTarjeta= document.getElementById("rcontenedor-formulario-tarjeta");
+    const furmularioPrincipal= document.getElementById("rcontenedor-formulario-principal");
+    const formularioTarjetaMercado= document.getElementById("rcontenedor-formulario-tarjeta-mercado");
+    const formularioBancaria= document.getElementById("rcontenedor-formulario-tarjeta-bancaria");
 
     formularioTarjeta.style.display="none";
     formularioTarjetaMercado.style.display="none";
