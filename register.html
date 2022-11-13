@@ -27,14 +27,14 @@
             <label>Forma de pago:</label>
             <div class="radiobuttonflex">
                 
-                <input type="button" id="tarjeta-debito" onclick="formularioTarjeta()" value="Tarjeta de credito"/>
-                <input type="button" id="tarjeta-mercado" onclick="formularioMercadopago()" value="Mercado Pago"/>
-                <input type="button" id="tarjeta-bancaria" onclick="formularioBancaria()" value="Cuenta bancaria"/>
+                <input type="button" id="rtarjeta-debito" onclick="formularioTarjeta()" value="Tarjeta de credito"/>
+                <input type="button" id="rtarjeta-mercado" onclick="formularioMercadopago()" value="Mercado Pago"/>
+                <input type="button" id="rtarjeta-bancaria" onclick="formularioBancaria()" value="Cuenta bancaria"/>
             </div>
             <span> Email:</span>
-            <input class="input-registro" type="email" id="email" required />
+            <input class="input-registro" type="email" id="remail" required />
             <span> Contraseña:</span>
-            <input class="input-registro" type="password" id="contraseña" required />
+            <input class="input-registro" type="password" id="rcontraseña" required />
             <input type="submit" onclick="registrar()" class="boton" value="Registrarse" />
 
          </div>
@@ -42,11 +42,11 @@
          <div id="contenedor-formulario-tarjeta"class="grid" style="display:none">
            
             <span> numero de tarjeta</span>
-            <input id="tarjeta" type="number" placeholder="16 numeros" min="0000000000000000" oninput="if(this.value.length > this.min.length) this.value = this.value.slice(0, this.min.length);" required/>
+            <input id="rtarjeta" type="number" placeholder="16 numeros" min="0000000000000000" oninput="if(this.value.length > this.min.length) this.value = this.value.slice(0, this.min.length);" required/>
             <span> nombre y apellido </span>
             <input type="text" id="tnombres" onclick="" placeholder="tal cual este en la tarjeta" required/> 
             <span> fecha de expiracion</span>
-            <input id="fecha" type="date"  min="2020-01-01"   max="2040-12-01" required/>   
+            <input id="rfecha" type="date"  min="2020-01-01"   max="2040-12-01" required/>   
 
             <input type="submit" onclick="validartarjeta()" value="confirmar" class="boton"  />
             <div></div>
@@ -56,9 +56,9 @@
        <div id="contenedor-formulario-tarjeta-mercado"class="grid" style="display:none">
            
         <span> Cuenta</span>
-        <input id="cuenta-mercado" type="email" required/>
+        <input id="rcuenta-mercado" type="email" required/>
         <span>Contraseña </span>
-        <input  type="password" required/> 
+        <input  type="mppassword" required/> 
         
         <input type="submit" onclick="validarTarjetaMercado()" value="confirmar" class="boton"  />
         <div></div>
@@ -66,12 +66,12 @@
    </div>
 
 
-   <div id="contenedor-formulario-tarjeta-bancaria"class="grid" style="display:none">
+   <div id="rcontenedor-formulario-tarjeta-bancaria"class="grid" style="display:none">
            
     <span> Numero de cuenta bancaria:</span>
-    <input id="numero-bancaria"type="number" required/>
+    <input id="rnumero-bancaria"type="number" required/>
     <span> nombre de titular:</span>
-    <input id="nombre-bancaria"type="text" required/>
+    <input id="rnombre-bancaria"type="text" required/>
    
     
     <input type="submit" onclick="validarTarjetaBancaria()" value="confirmar" class="boton"  />
