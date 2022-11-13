@@ -10,19 +10,13 @@ registrar=() =>{
 
     const expresionesNombres = {
           numeros: /[0-9]/,
-          caracterEspecial: /[ -/:-@[-`{-■]/,
+          caracterEspecial: /[!-/:-@[-`{-■]/,
           vacio: /^$/
           }
 
-    const expresionesApellidos = {
-            numeros: /[0-9]/,
-            caracterEspecial: /[ -/:-@[-`{-■]/,
-            vacio: /^$/
-            }
-
     if (expresionesNombres.numeros.test(rnombre)){
         swal({
-            title: "Nombre tiene un numero",
+            title: "No se permite utilizar caracteres numericos en el nombre",
             text: "",
             icon: "warning",
             button: "Volver a ingresar dato",
@@ -31,7 +25,7 @@ registrar=() =>{
 
     if (expresionesNombres.caracterEspecial.test(rnombre)){
         swal({
-            title: "Nombre tiene algun caracter especial",
+            title: "No se permite utilizar caracteres especiales en el nombre",
             text: "",
             icon: "warning",
             button: "Volver a ingresar dato",
@@ -40,14 +34,14 @@ registrar=() =>{
 
     if (expresionesNombres.vacio.test(rnombre)){
         swal({
-            title: "Nombre esta vacio",
+            title: "No se permite dejar vacío el nombre",
             text: "",
             icon: "warning",
             button: "Volver a ingresar dato",
           }); 
     }
 
-    if (rnombre.length < 3){
+    if (rnombre.length < 3 && rnombre.length > 0){
         swal({
             title: "El nombre es menor a lo permitido",
             text: "",
@@ -64,21 +58,27 @@ registrar=() =>{
             button: "Volver a ingresar dato",
           }); 
     }
-/* -----------------apellido---------- */
 
+    /* -----------------apellido---------- */
+
+    const expresionesApellidos = {
+        numeros: /[0-9]/,
+        caracterEspecial: /[ -/:-@[-`{-■]/,
+        vacio: /^$/
+    }
 
     if (rapellido.length > 20){
         swal({
-            title: "El apellido es mayor a lo permitido",
+            title: "El apellido es mayor de lo permitido",
             text: "",
             icon: "warning",
             button: "Volver a ingresar dato",
           }); 
     }
 
-    if (rapellido.length < 3){
+    if (rapellido.length < 3 && rapellido.length > 0){
         swal({
-            title: "El apellido es menor a lo permitido",
+            title: "El apellido es menor de lo permitido",
             text: "",
             icon: "warning",
             button: "Volver a ingresar dato",
@@ -87,7 +87,7 @@ registrar=() =>{
 
     if (expresionesApellidos.vacio.test(rapellido)){
         swal({
-            title: "Apellido esta vacio",
+            title: "No se permite dejar vacío el apellido",
             text: "",
             icon: "warning",
             button: "Volver a ingresar dato",
@@ -96,7 +96,7 @@ registrar=() =>{
 
     if (expresionesApellidos.caracterEspecial.test(rapellido)){
         swal({
-            title: "Apellido tiene algun caracter especial",
+            title: "No se permite utilizar caracteres especiales en el apellido",
             text: "",
             icon: "warning",
             button: "Volver a ingresar dato",
@@ -105,15 +105,169 @@ registrar=() =>{
 
     if (expresionesApellidos.numeros.test(rapellido)){
         swal({
-            title: "Apellido tiene un numero",
+            title: "No se permite utilizar caracteres numericos en el apellido",
             text: "",
             icon: "warning",
             button: "Volver a ingresar dato",
           }); 
     }
 
+    /* ----------------DNI---------- */
+
+    const expresionesDNI = {
+        letras: /[a-zA-Z]/,
+        caracterEspecial: /[ -/:-@[-`{-■]/,
+        vacio: /^$/
+    }
+
+    if (rdni.length > 8){
+        swal({
+            title: "El DNI es mayor de lo permitido",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    if (rdni.length < 6 && rdni.length > 0){
+        swal({
+            title: "El DNI es menor de lo permitido",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    if (expresionesDNI.vacio.test(rdni)){
+        swal({
+            title: "No se permite dejar vacío el DNI",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    if (expresionesDNI.letras.test(rdni) || expresionesDNI.caracterEspecial.test(rdni)){
+        swal({
+            title: "El DNI contiene caracteres no numéricos",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    /* ----------------domicilio---------- */
+
+    const expresionesDomicilios = {
+        caracterEspecial: /[!-/:-@[-`{-■]/,
+        vacio: /^$/
+    }
+
+    if (expresionesDomicilios.caracterEspecial.test(rdomicilio)){
+        swal({
+            title: "No se permite utilizar caracteres especiales en la dirección",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    if (expresionesDomicilios.vacio.test(rdomicilio)){
+        swal({
+            title: "No se permite dejar vacía la dirección",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    if (rdomicilio.length < 5 && rdomicilio.length > 0){
+        swal({
+            title: "La dirección es menor de lo permitido",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    if (rdomicilio.length > 40){
+        swal({
+            title: "La dirección es mayor de lo permitido",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+
+    /* ---------------email---------- */
+
+    const expresionesEmail = {
+        caracterEspecial: /^([\w-]|(?<!\.)\.)+[a-zA-Z0-9]@[a-zA-Z0-9]([a-zA-Z0-9\-]+)((\.([a-zA-Z]){2,9}){0,2})$/ ,
+        vacio: /^$/
+    }
+
+    if (!expresionesEmail.caracterEspecial.test(email)){
+        swal({
+            title: "No se permite utilizar caracteres especiales en el email",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    if (expresionesEmail.vacio.test(email)){
+        swal({
+            title: "No se permite dejar vacío el email",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    } 
+
     
+     /* ------------password---------- */
 
+     const expresionesPassword = {
+        caracterEspecial: /[!-/:-@[-`{-■]/,
+        noTieneMayus: /[A-Z]/,
+        vacio: /^$/
+    }
 
+    if (!expresionesPassword.noTieneMayus.test(password)){
+        swal({
+            title: "La contraseña no contiene ninguna mayúscula",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    if (!expresionesPassword.caracterEspecial.test(password)){
+        swal({
+            title: "La contraseña no contiene caracteres especiales",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    if (expresionesPassword.vacio.test(password)){
+        swal({
+            title: "No se permite dejar vacía la contraseña",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    if (password.length < 8 && password.length > 0){
+        swal({
+            title: "La contraseña es menor de lo permitido",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    } 
 }
 
