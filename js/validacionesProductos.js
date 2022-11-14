@@ -14,7 +14,7 @@ function habilitarCheckIdaVuelta() {
 }
 
 
-validarProductos=() =>{
+validarPasajes=() =>{
     
     const terminalSalida= document.getElementById("ter-salida").value;
     const terminalDestino= document.getElementById("ter-destino").value;
@@ -94,6 +94,16 @@ validarProductos=() =>{
       if (cantidadAdultos=="0" && cantidadDiscapacitados=="0" && cantidadMenores=="0"){
         swal({
             title: "Debe ingresar al menos un tipo de pasajero",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+      }
+
+      if ((cantidadAdultos=="0" && cantidadDiscapacitados=="" && cantidadMenores=="") || (cantidadAdultos=="" && cantidadDiscapacitados=="0" && cantidadMenores=="") ||(cantidadAdultos=="" && cantidadDiscapacitados=="" && cantidadMenores=="0")
+       ||(cantidadAdultos=="0" && cantidadDiscapacitados=="0" && cantidadMenores=="") || (cantidadAdultos=="" && cantidadDiscapacitados=="0" && cantidadMenores=="0")||(cantidadAdultos=="0" && cantidadDiscapacitados=="" && cantidadMenores=="0")){
+        swal({
+            title: "Debe ingresar una cantidad valida",
             text: "",
             icon: "warning",
             button: "Volver a ingresar dato",
