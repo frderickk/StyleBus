@@ -384,8 +384,6 @@ const precioPaq = 50000-(50000*0.1);
   `;  
 }
 
-
-
 var estandar = ["Estándar"];
 var estandarPlus = ["Estándar", "VIP"];
 var premium = ["Estándar", "VIP"];
