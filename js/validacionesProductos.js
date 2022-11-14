@@ -133,7 +133,7 @@ validarPasajes=() =>{
         <div class="card-body">
           <h5 class="card-title">Ver disponibilidad</h5>
           <p class="card-text">El viaje de ${terminalSalida} a ${terminalDestino} tiene un valor de ${(precio*cantA*precioAdulto) + (precio*cantM*precioMenor) + (cantD*precio*precioDisca)} pesos!</p>
-          <a  class="btn btn-primary" id="pasaje1">Comprar</a>
+          <a href="reserva.html" class="boton" id="reservar">Reservar</a>
         </div>
       </div>
     </div>
@@ -250,7 +250,7 @@ const precioExc = 50000*0.2;
       <div class="card-body">
         <h5 class="card-title">Ver disponibilidad</h5>
         <p class="card-text">La excursion de ${destinoExc} tiene un valor de ${(precioExc*cantAExc*precioAdultoExc) + (precioExc*cantMExc*precioMenorExc) + (precioExc*cantDExc*precioDiscaExc)} pesos!</p>
-        <a  class="btn btn-primary" id="pasaje1">Comprar</a>
+        <a href="reserva.html" class="boton" id="reservar">Reservar</a>
       </div>
     </div>
   </div>
@@ -377,7 +377,7 @@ const precioPaq = 50000-(50000*0.1);
       <div class="card-body">
         <h5 class="card-title">Ver disponibilidad</h5>
         <p class="card-text">El viaje de ${terminalSalidaPaq} a ${terminalDestinoPaq} tiene un valor de ${(precioPaq*cantAPaq*precioAdultoPaq) + (precioPaq*cantMPaq*precioMenorPaq) + (precioPaq*cantDPaq*precioDiscaPaq)} pesos!</p>
-        <a  class="btn btn-primary" id="pasaje1">Comprar</a>
+        <a href="reserva.html" class="boton" id="reservar">Reservar</a>
       </div>
     </div>
   </div>
