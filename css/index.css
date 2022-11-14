@@ -86,7 +86,7 @@ input:focus, textarea:focus {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color:rgb(199, 199, 199);
+  background-color:rgb(107, 107, 107);
   display: flex;
   flex-wrap: wrap;
 }
@@ -97,7 +97,7 @@ input:focus, textarea:focus {
   padding: 0;
   overflow: hidden;
   width: 355px;
-  background-color:rgb(199, 199, 199);
+  background-color:rgb(107, 107, 107);
   display: flex;
 }
 

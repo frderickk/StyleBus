@@ -22,6 +22,16 @@
                     <option value="Cupon">Cupon</option>
                 </select>
             </div>
+            <div id="cupones">
+                <div>
+                    <label for="validation-formas-de-pago"><input type="checkbox" class="checkbox-iv" id="checkbox-cupon" onchange="habilitarCheckCupon()">Cupones</label>
+                </div>
+                <div id ="content" style="display: none;">
+                    <label for="validation-formas-de-pago">Cupones</label>
+                    <select class="form-select" id="lista-cupones" required>
+                    </select>
+                </div>
+            </div>
 
             <span> Email </span>
             <input class="input-compra" type="email" id="remail" />
@@ -32,6 +42,7 @@
 
     </form>
             <script src="js/reserva.js"></script>
+            <script src="js/compra.js"></script>
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
 </body>
 </html>
