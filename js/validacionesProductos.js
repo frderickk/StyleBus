@@ -141,7 +141,8 @@ validarPasajes=() =>{
 }
 
 validarExcursiones=() =>{
-    
+  
+  const destinoExc = document.getElementById("ter-destino-exc").value;
   const cantidadAdultosExc = document.getElementById("cantidad-adultos-exc").value;
   const cantidadMenoresExc = document.getElementById("cantidad-menores-exc").value;
   const cantidadDiscapacitadosExc = document.getElementById("cantidad-discapacitados-exc").value;
@@ -248,7 +249,7 @@ const precioExc = 50000*0.2;
     <div class="card" style="">
       <div class="card-body">
         <h5 class="card-title">Ver disponibilidad</h5>
-        <p class="card-text">La excursion de ${terminalDestino} tiene un valor de ${(precioExc*cantAExc*precioAdultoExc) + (precioExc*cantMExc*precioMenorExc) + (precioExc*cantDExc*precioDiscaExc)} pesos!</p>
+        <p class="card-text">La excursion de ${destinoExc} tiene un valor de ${(precioExc*cantAExc*precioAdultoExc) + (precioExc*cantMExc*precioMenorExc) + (precioExc*cantDExc*precioDiscaExc)} pesos!</p>
         <a  class="btn btn-primary" id="pasaje1">Comprar</a>
       </div>
     </div>
