@@ -399,7 +399,8 @@ else if (!expresionesMetodosDePago.caracterEspecialMP.test(cuentaMP) && cuentaMP
         icon: "success",
         button: "Aceptar"}).then(function() {
             window.location = "compra.html";
-        });}
+        });
+    }
     
 
    
