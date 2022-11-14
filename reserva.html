@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva</title>
+
+</head>
+
+<body>
+    <h1 id="titulo">Datos de los pasajeros:</h1>
+    <form id="form">
+        <div class="grid" id="rcontenedor-formulario-reserva" >
+
+            <span > Nombre </span>
+            <input id="rnombre" type="text" required/> 
+
+            <span> Apellido </span>
+            <input id="rapellido" type="text" /> 
+
+            <span > Direccion </span>
+            <input id="rdomicilio" type="text" /> 
+
+            <span >DNI </span>
+            <input id="rdni" type="text" > 
+
+            <span> Fecha de nacimiento </span>
+            <input  type="date" min="1901-01-01" max="3000-01-01" onfocus="this.max=new Date().toISOString().split('T')[0]" > 
+
+            <span> Email </span>
+            <input class="input-reserva" type="email" id="remail" />
+
+            <a href="compra.html">
+            <input type="button" onclick="continuar()" class="boton" value="Continuar" />
+           </a>
+         </div>
+
+    </form>
+            <script src="js/reserva.js"></script>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+</body>
+</html>
