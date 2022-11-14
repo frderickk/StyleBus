@@ -161,7 +161,7 @@ ol {
   
 }
 
-#selecciones-pasajes select{
+#seleccion-terminales select{
   max-width: 250px;
 	position: relative;
 	width: 100%;
