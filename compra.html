@@ -20,23 +20,25 @@
                 <select class="form-select" id="formas-pago" required>
                     <option value="Tarjeta de credito">Tarjeta de credito</option>
                     <option value="CBU/CVU">CBU/CVU</option>
-                    <option value="Cupon">Cupon</option>
                 </select>
             </div>
+            <br>
             <div id="cupones">
                 <div>
                     <label for="validation-formas-de-pago"><input type="checkbox" class="checkbox-iv" id="checkbox-cupon" onchange="habilitarCheckCupon()">Cupones</label>
                 </div>
-                <div id ="content" style="display: none;">
-                    <label for="validation-formas-de-pago">Cupones</label>
+                <br>
+                <div class="seleccion-cupones"id ="content" style="display: none;">
+                    <label for="validation-formas-de-pago"></label>
                     <select class="form-select" id="lista-cupones" required>
                     </select>
                 </div>
             </div>
-
+            <br>
             <span> Email </span>
+            <br>
             <input class="input-compra" type="email" id="remail" />
-
+            <br>
             <input type="button" onclick="comprar()" class="boton" value="Comprar" /> 
 
          </div>

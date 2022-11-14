@@ -96,7 +96,7 @@ input:focus, textarea:focus {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  width: 355px;
+  width: 100%;
   background-color:rgb(107, 107, 107);
   display: flex;
 }
@@ -174,7 +174,7 @@ ol {
 	border-radius: 0; 
 	font-size: 1em;
 	color: #ff0080;
-	border:2px solid rgb(230, 196, 3);
+	border:2px solid rgb(0, 0, 0);
     border-radius: 20px;
     position: relative;
 }
@@ -216,7 +216,7 @@ ol {
 	border-radius: 0; 
 	font-size: 1em;
 	color: #ff0080;
-	border:2px solid rgb(230, 196, 3);
+	border:2px solid rgb(0, 0, 0);
     border-radius: 20px;
     position: relative;
 }
@@ -234,7 +234,7 @@ ol {
 	border-radius: 0; 
 	font-size: 1em;
 	color: #ff0080;
-	border:2px solid rgb(230, 196, 3);
+	border:2px solid rgb(0, 0, 0);
     border-radius: 20px;
     position: relative;
 }
@@ -252,7 +252,43 @@ ol {
 	border-radius: 0; 
 	font-size: 1em;
 	color: #ff0080;
-	border:2px solid rgb(230, 196, 3);
+	border:2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    position: relative;
+}
+
+#seleccion-formas-de-pago select{
+  max-width: 250px;
+	position: relative;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+    margin: 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0; 
+	font-size: 1em;
+	color: #ff0080;
+	border:2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    position: relative;
+}
+
+.seleccion-cupones select{
+  max-width: 250px;
+	position: relative;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+    margin: 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0; 
+	font-size: 1em;
+	color: #ff0080;
+	border:2px solid rgb(0, 0, 0);
     border-radius: 20px;
     position: relative;
 }
@@ -270,7 +306,7 @@ input[type="date"] {
 	border-radius: 0; 
 	font-size: 1em;
 	color: #ff0080;
-	border:2px solid rgb(230, 196, 3);
+	border:2px solid rgb(0, 0, 0);
     border-radius: 20px;
     position: relative;
 }
@@ -288,7 +324,7 @@ input[type="text"] {
 	border-radius: 0; 
 	font-size: 1em;
 	color: #ff0080;
-	border:2px solid rgb(230, 196, 3);
+	border:2px solid rgb(0, 0, 0);
     border-radius: 20px;
     position: relative;
 }
@@ -306,7 +342,25 @@ input[type="email"] {
 	border-radius: 0; 
 	font-size: 1em;
 	color: #ff0080;
-	border:2px solid rgb(230, 196, 3);
+	border:2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    position: relative;
+}
+
+input[type="password"] {
+  max-width: 250px;
+	position: relative;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+    margin: 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0; 
+	font-size: 1em;
+	color: #ff0080;
+	border:2px solid rgb(0, 0, 0);
     border-radius: 20px;
     position: relative;
 }
@@ -337,4 +391,9 @@ button[type="button"]{
     border-radius: 10px;
     cursor: pointer;
     margin-bottom: 30px;
+}
+
+#form{
+  border: 1px solid black;
+  width: 40%;
 }

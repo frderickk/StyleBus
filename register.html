@@ -11,31 +11,44 @@
 </head>
 
 <body>
-    <h1 id="titulo"> Crea tu cuenta:</h1>
+    <h1 id="titulo"> Crea tu cuenta</h1>
     <form id="form">
-        <div class="grid" id="rcontenedor-formulario-principal" >
-
+        <div class="grid" id="rcontenedor-formulario-principal">
+            <br>
             <span > Nombre </span>
+            <br>
             <input id="rnombre" type="text" required/> 
+            <br>
             <span> Apellido </span>
+            <br>
             <input id="rapellido" type="text" /> 
+            <br>
             <span > Direccion </span>
+            <br>
             <input id="rdomicilio" type="text" /> 
+            <br>
             <span >DNI </span>
+            <br>
             <input id="rdni" type="text" > 
+            <br>
             <span> Fecha de nacimiento </span>
+            <br>
             <input  type="date" min="1901-01-01" max="3000-01-01" onfocus="this.max=new Date().toISOString().split('T')[0]" > 
+            <br>
             <label>Forma de pago </label>
             <div class="radiobuttonflex">
-                
                 <input type="button" id="rtarjeta-debito" onclick="formularioTarjeta()" value="Tarjeta de credito"/>
                 <input type="button" id="rtarjeta-mercado" onclick="formularioMercadopago()" value="Mercado Pago"/>
                 <input type="button" id="rtarjeta-bancaria" onclick="formularioBancaria()" value="Cuenta bancaria"/>
             </div>
             <span> Email </span>
+            <br>
             <input class="input-registro" type="email" id="remail" />
+            <br>
             <span> Contraseña </span>
+            <br>
             <input class="input-registro" type="password" id="rcontraseña" />
+            <br>
             <input type="button" onclick="registrar()" class="boton" value="Registrarse" />
 
          </div>
