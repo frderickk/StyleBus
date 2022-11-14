@@ -58,10 +58,9 @@
                             </select>
                         </div>
                     </div>
-
                     <div id="ida-vuelta">
                         <div>
-                            <label for="validation-form-pasajes"><input type="checkbox" id="checkbox-ida-vuelta" onchange="habilitarCheckIdaVuelta()">Ida y vuelta</label>
+                            <label for="validation-form-pasajes"><input type="checkbox" class="checkbox-iv" id="checkbox-ida-vuelta" onchange="habilitarCheckIdaVuelta()">Ida y vuelta</label>
                         </div>
                         <div id="ida-vuelta-fechas">
                             <div>
@@ -76,8 +75,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    
                     <div id="cantidades">
                         <div>
                             <label for="validation-form-pasajes" class="form-label">Cantidad de adultos</label>
@@ -99,6 +96,13 @@
                                 <option value="Estandar plus">Estandar plus</option>
                                 <option value="Premium">Premium</option>
                             </select>
+                    </div>
+                    <div id="seleccion-categorias-asiento">
+                        <label for="validation-form-pasajes">Categoría de asiento</label>
+                        <select class="form-select" id="categoria-asiento" required>
+                            <option value="Estandar">VIP</option>
+                            <option value="Estandar plus">Estandar</option>
+                        </select>
                     </div>
                     <div>
                       <!----     <button type="button" onclick="validarPasajes()" id="cargar-pasajes" class="btn btn-primary">Ver disponibilidad</button>--> 
@@ -166,24 +170,23 @@
                             </select>
                         </div>
                     </div>
-                    <div>
-                        <label for="validation-form-pasajes">
-                            <input type="checkbox" id="checkbox-ida-vuelta" onchange="habilitarCheckIdaVuelta()" >Ida y vuelta
-                        </label>
+                    <div id="ida-vuelta">
+                        <div>
+                            <label for="validation-form-pasajes"><input type="checkbox" id="checkbox-ida-vuelta" onchange="habilitarCheckIdaVuelta()">Ida y vuelta</label>
+                        </div>
+                        <div id="ida-vuelta-fechas">
+                            <div>
+                                <label for="validation-form-pasajes" class="form-label">Fecha de salida</label>
+                                <input type="date" min="2022-11-15" max="2023-05-17" class="form-control" required="" id="datetime" >
+                                <span class="validity"></span>
+                            </div>
+                            <div id ="content" style="display: none;">
+                                <label for="validation-form-pasajes" class="form-label">Fecha de vuelta</label>
+                                <input type="date" min="2022-12-15" max="2023-06-17" class="form-control" required="" id="datetime" >
+                                <span class="validity"></span>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label for="validation-form-pasajes" class="form-label">Fecha de salida</label>
-                        <input type="date" class="form-control" required="" id="datetime" min="2022-11-12" max="2023-17-05">
-                        <span class="validity"></span>
-                    </div>
-
-                    <div id ="content" style="display: none;">
-                        <label for="validation-form-pasajes" class="form-label">Fecha de vuelta</label>
-                        <input type="date" class="form-control" required="" id="datetime" min="2022-12-12" max="2023-17-06">
-                        <span class="validity"></span>
-                    </div>
-
-
                     <div id="cantidades">
                         <div>
                             <label for="validation-form-pasajes" class="form-label">Cantidad de adultos</label>
@@ -205,7 +208,14 @@
                             <option value="Estandar plus">Estandar plus</option>
                             <option value="Premium">Premium</option>
                         </select>
-                </div>
+                    </div>
+                    <div id="seleccion-categorias-asiento">
+                        <label for="validation-form-pasajes">Categoría de asiento</label>
+                        <select class="form-select" id="categoria-asiento" required>
+                            <option value="Estandar">VIP</option>
+                            <option value="Estandar plus">Estandar</option>
+                        </select>
+                    </div>
                     <div>
                         <button type="button" onclick="" id="cargar-pasajes" value = "Ver disponibilidad" class="btn btn-primary">Ver disponibilidad</button>
 
