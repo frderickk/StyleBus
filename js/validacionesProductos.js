@@ -15,11 +15,13 @@ function habilitarCheckIdaVuelta() {
 
 validarPasajes=() =>{
     
+    const categoriaPasajes = document.getElementById("categoria-omnibus").value;
     const terminalSalida= document.getElementById("ter-salida").value;
     const terminalDestino= document.getElementById("ter-destino").value;
     const cantidadAdultos = document.getElementById("cantidad-adultos").value;
     const cantidadMenores = document.getElementById("cantidad-menores").value;
     const cantidadDiscapacitados = document.getElementById("cantidad-discapacitados").value;
+
 
     const expresiones= {
       letras: /[a-zA-Z]/,
@@ -36,7 +38,7 @@ validarPasajes=() =>{
           }); 
       }
       
-      if (expresiones.letras.test(cantidadAdultos)){
+      else if (expresiones.letras.test(cantidadAdultos)){
         swal({
             title: "La cantidad de adultos contiene algun caracter no numerico",
             text: "",
@@ -45,7 +47,7 @@ validarPasajes=() =>{
           }); 
       }
 
-      if (expresiones.letras.test(cantidadMenores)){
+      else if (expresiones.letras.test(cantidadMenores)){
         swal({
             title: "La cantidad de menores contiene algun caracter no numerico",
             text: "",
@@ -54,7 +56,7 @@ validarPasajes=() =>{
           }); 
       }
 
-      if (expresiones.letras.test(cantidadDiscapacitados)){
+      else if (expresiones.letras.test(cantidadDiscapacitados)){
         swal({
             title: "La cantidad de discapacitados contiene algun caracter no numerico",
             text: "",
@@ -63,7 +65,7 @@ validarPasajes=() =>{
           }); 
       }
 
-      if (expresiones.caracterEspecial.test(cantidadAdultos)){
+      else if (expresiones.caracterEspecial.test(cantidadAdultos)){
         swal({
             title: "No se permite utilizar caracteres especiales en cantidad de adultos",
             text: "",
@@ -72,7 +74,7 @@ validarPasajes=() =>{
           }); 
       }
  
-      if (expresiones.caracterEspecial.test(cantidadMenores)){
+      else if (expresiones.caracterEspecial.test(cantidadMenores)){
         swal({
             title: "No se permite utilizar caracteres especiales en cantidad de menores",
             text: "",
@@ -81,7 +83,7 @@ validarPasajes=() =>{
           }); 
       }
       
-      if (expresiones.caracterEspecial.test(cantidadDiscapacitados)){
+      else if (expresiones.caracterEspecial.test(cantidadDiscapacitados)){
         swal({
             title: "No se permite utilizar caracteres especiales en cantidad de discapacitados",
             text: "",
@@ -90,7 +92,7 @@ validarPasajes=() =>{
           }); 
       }
 
-      if (cantidadAdultos=="0" && cantidadDiscapacitados=="0" && cantidadMenores=="0"){
+      else if (cantidadAdultos=="0" && cantidadDiscapacitados=="0" && cantidadMenores=="0"){
         swal({
             title: "Debe ingresar al menos un tipo de pasajero",
             text: "",
@@ -99,7 +101,7 @@ validarPasajes=() =>{
           }); 
       }
 
-      if ((cantidadAdultos=="0" && cantidadDiscapacitados=="" && cantidadMenores=="") || (cantidadAdultos=="" && cantidadDiscapacitados=="0" && cantidadMenores=="") ||(cantidadAdultos=="" && cantidadDiscapacitados=="" && cantidadMenores=="0")
+      else if ((cantidadAdultos=="0" && cantidadDiscapacitados=="" && cantidadMenores=="") || (cantidadAdultos=="" && cantidadDiscapacitados=="0" && cantidadMenores=="") ||(cantidadAdultos=="" && cantidadDiscapacitados=="" && cantidadMenores=="0")
        ||(cantidadAdultos=="0" && cantidadDiscapacitados=="0" && cantidadMenores=="") || (cantidadAdultos=="" && cantidadDiscapacitados=="0" && cantidadMenores=="0")||(cantidadAdultos=="0" && cantidadDiscapacitados=="" && cantidadMenores=="0")){
         swal({
             title: "Debe ingresar una cantidad valida",
@@ -109,16 +111,26 @@ validarPasajes=() =>{
           }); 
       }
 
-      if (terminalSalida==terminalDestino){
+      else if (terminalSalida==terminalDestino){
         swal({
             title: "La terminal de salida es igual a la de destino",
             text: "",
             icon: "warning",
             button: "Volver a ingresar dato",
           });
-
         }
 
+        else if (categoriaPasajes == ''){
+          swal({
+              title: "Debe seleccionar una categoria",
+              text: "",
+              icon: "warning",
+              button: "Volver a ingresar dato",
+            });
+          }
+
+
+  else{
   const div = document.getElementById("cargar-pasajes");
   const cantA = parseInt(cantidadAdultos) || 0;
   const cantM = parseInt(cantidadMenores) || 0;
@@ -138,8 +150,9 @@ validarPasajes=() =>{
       </div>
     </div>
     `;  
+  }
 }
-
+  
 validarExcursiones=() =>{
   
   const destinoExc = document.getElementById("ter-destino-exc").value;
@@ -162,7 +175,7 @@ validarExcursiones=() =>{
         }); 
     }
     
-    if (expresiones.letras.test(cantidadAdultosExc)){
+    else if (expresiones.letras.test(cantidadAdultosExc)){
       swal({
           title: "La cantidad de adultos contiene algun caracter no numerico",
           text: "",
@@ -171,7 +184,7 @@ validarExcursiones=() =>{
         }); 
     }
 
-    if (expresiones.letras.test(cantidadMenoresExc)){
+    else if (expresiones.letras.test(cantidadMenoresExc)){
       swal({
           title: "La cantidad de menores contiene algun caracter no numerico",
           text: "",
@@ -180,7 +193,7 @@ validarExcursiones=() =>{
         }); 
     }
 
-    if (expresiones.letras.test(cantidadDiscapacitadosExc)){
+    else if (expresiones.letras.test(cantidadDiscapacitadosExc)){
       swal({
           title: "La cantidad de discapacitados contiene algun caracter no numerico",
           text: "",
@@ -189,7 +202,7 @@ validarExcursiones=() =>{
         }); 
     }
 
-    if (expresiones.caracterEspecial.test(cantidadAdultosExc)){
+    else if (expresiones.caracterEspecial.test(cantidadAdultosExc)){
       swal({
           title: "No se permite utilizar caracteres especiales en cantidad de adultos",
           text: "",
@@ -198,7 +211,7 @@ validarExcursiones=() =>{
         }); 
     }
 
-    if (expresiones.caracterEspecial.test(cantidadMenoresExc)){
+    else if (expresiones.caracterEspecial.test(cantidadMenoresExc)){
       swal({
           title: "No se permite utilizar caracteres especiales en cantidad de menores",
           text: "",
@@ -207,7 +220,7 @@ validarExcursiones=() =>{
         }); 
     }
     
-    if (expresiones.caracterEspecial.test(cantidadDiscapacitadosExc)){
+    else if (expresiones.caracterEspecial.test(cantidadDiscapacitadosExc)){
       swal({
           title: "No se permite utilizar caracteres especiales en cantidad de discapacitados",
           text: "",
@@ -216,7 +229,7 @@ validarExcursiones=() =>{
         }); 
     }
 
-    if (cantidadAdultosExc=="0" && cantidadDiscapacitadosExc=="0" && cantidadMenoresExc=="0"){
+    else if (cantidadAdultosExc=="0" && cantidadDiscapacitadosExc=="0" && cantidadMenoresExc=="0"){
       swal({
           title: "Debe ingresar al menos un tipo de pasajero",
           text: "",
@@ -225,7 +238,7 @@ validarExcursiones=() =>{
         }); 
     }
 
-    if ((cantidadAdultosExc=="0" && cantidadDiscapacitadosExc=="" && cantidadMenoresExc=="") || (cantidadAdultosExc=="" && cantidadDiscapacitadosExc=="0" && cantidadMenoresExc=="") ||(cantidadAdultosExc=="" && cantidadDiscapacitadosExc=="" && cantidadMenoresExc=="0")
+    else if ((cantidadAdultosExc=="0" && cantidadDiscapacitadosExc=="" && cantidadMenoresExc=="") || (cantidadAdultosExc=="" && cantidadDiscapacitadosExc=="0" && cantidadMenoresExc=="") ||(cantidadAdultosExc=="" && cantidadDiscapacitadosExc=="" && cantidadMenoresExc=="0")
      ||(cantidadAdultosExc=="0" && cantidadDiscapacitadosExc=="0" && cantidadMenoresExc=="") || (cantidadAdultosExc=="" && cantidadDiscapacitadosExc=="0" && cantidadMenoresExc=="0")||(cantidadAdultosExc=="0" && cantidadDiscapacitadosExc=="" && cantidadMenoresExc=="0")){
       swal({
           title: "Debe ingresar una cantidad valida",
@@ -234,8 +247,17 @@ validarExcursiones=() =>{
           button: "Volver a ingresar dato",
         }); 
     }
-  
 
+    else if (destinoExc == ''){
+     swal({
+         title: "Debe seleccionar un destino",
+         text: "",
+         icon: "warning",
+         button: "Volver a ingresar dato",
+       }); 
+   }
+  
+else {
 const div = document.getElementById("cargar-excursiones");
 const cantAExc = parseInt(cantidadAdultosExc) || 0;
 const cantMExc = parseInt(cantidadMenoresExc) || 0;
@@ -256,9 +278,11 @@ const precioExc = 50000*0.2;
   </div>
   `;  
 }
+}
 
 validarPaquetes=() =>{
-    
+  
+  const categoriaPaquetes = document.getElementById("categoria-omnibus-paq").value;
   const terminalSalidaPaq= document.getElementById("ter-salida-paq").value;
   const terminalDestinoPaq= document.getElementById("ter-destino-paq").value;
   const cantidadAdultosPaq = document.getElementById("cantidad-adultos-paq").value;
@@ -280,7 +304,7 @@ validarPaquetes=() =>{
         }); 
     }
     
-    if (expresiones.letras.test(cantidadAdultosPaq)){
+    else if (expresiones.letras.test(cantidadAdultosPaq)){
       swal({
           title: "La cantidad de adultos contiene algun caracter no numerico",
           text: "",
@@ -289,7 +313,7 @@ validarPaquetes=() =>{
         }); 
     }
 
-    if (expresiones.letras.test(cantidadMenoresPaq)){
+    else if (expresiones.letras.test(cantidadMenoresPaq)){
       swal({
           title: "La cantidad de menores contiene algun caracter no numerico",
           text: "",
@@ -298,7 +322,7 @@ validarPaquetes=() =>{
         }); 
     }
 
-    if (expresiones.letras.test(cantidadDiscapacitadosPaq)){
+    else if (expresiones.letras.test(cantidadDiscapacitadosPaq)){
       swal({
           title: "La cantidad de discapacitados contiene algun caracter no numerico",
           text: "",
@@ -307,7 +331,7 @@ validarPaquetes=() =>{
         }); 
     }
 
-    if (expresiones.caracterEspecial.test(cantidadAdultosPaq)){
+    else if (expresiones.caracterEspecial.test(cantidadAdultosPaq)){
       swal({
           title: "No se permite utilizar caracteres especiales en cantidad de adultos",
           text: "",
@@ -316,7 +340,7 @@ validarPaquetes=() =>{
         }); 
     }
 
-    if (expresiones.caracterEspecial.test(cantidadMenoresPaq)){
+    else if (expresiones.caracterEspecial.test(cantidadMenoresPaq)){
       swal({
           title: "No se permite utilizar caracteres especiales en cantidad de menores",
           text: "",
@@ -325,7 +349,7 @@ validarPaquetes=() =>{
         }); 
     }
     
-    if (expresiones.caracterEspecial.test(cantidadDiscapacitadosPaq)){
+    else if (expresiones.caracterEspecial.test(cantidadDiscapacitadosPaq)){
       swal({
           title: "No se permite utilizar caracteres especiales en cantidad de discapacitados",
           text: "",
@@ -334,7 +358,7 @@ validarPaquetes=() =>{
         }); 
     }
 
-    if (cantidadAdultosPaq=="0" && cantidadDiscapacitadosPaq=="0" && cantidadMenoresPaq=="0"){
+    else if (cantidadAdultosPaq=="0" && cantidadDiscapacitadosPaq=="0" && cantidadMenoresPaq=="0"){
       swal({
           title: "Debe ingresar al menos un tipo de pasajero",
           text: "",
@@ -343,7 +367,7 @@ validarPaquetes=() =>{
         }); 
     }
 
-    if ((cantidadAdultosPaq=="0" && cantidadDiscapacitadosPaq=="" && cantidadMenoresPaq=="") || (cantidadAdultosPaq=="" && cantidadDiscapacitadosPaq=="0" && cantidadMenoresPaq=="") ||(cantidadAdultosPaq=="" && cantidadDiscapacitadosPaq=="" && cantidadMenoresPaq=="0")
+    else if ((cantidadAdultosPaq=="0" && cantidadDiscapacitadosPaq=="" && cantidadMenoresPaq=="") || (cantidadAdultosPaq=="" && cantidadDiscapacitadosPaq=="0" && cantidadMenoresPaq=="") ||(cantidadAdultosPaq=="" && cantidadDiscapacitadosPaq=="" && cantidadMenoresPaq=="0")
      ||(cantidadAdultosPaq=="0" && cantidadDiscapacitadosPaq=="0" && cantidadMenoresPaq=="") || (cantidadAdultosPaq=="" && cantidadDiscapacitadosPaq=="0" && cantidadMenoresPaq=="0")||(cantidadAdultosPaq=="0" && cantidadDiscapacitadosPaq=="" && cantidadMenoresPaq=="0")){
       swal({
           title: "Debe ingresar una cantidad valida",
@@ -353,7 +377,7 @@ validarPaquetes=() =>{
         }); 
     }
 
-    if (terminalSalidaPaq==terminalDestinoPaq){
+    else if (terminalSalidaPaq==terminalDestinoPaq){
       swal({
           title: "La terminal de salida es igual a la de destino",
           text: "",
@@ -362,6 +386,19 @@ validarPaquetes=() =>{
         });
 
       }
+
+      else if (categoriaPaquetes==''){
+        swal({
+            title: "Debe seleccionar una categoria",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          });
+  
+        }
+ 
+  
+ else {       
 
 const div = document.getElementById("cargar-paquetes");
 const cantAPaq = parseInt(cantidadAdultosPaq) || 0;
@@ -383,7 +420,7 @@ const precioPaq = 50000-(50000*0.1);
   </div>
   `;  
 }
-
+}
 var estandar = ["Estándar"];
 var estandarPlus = ["Estándar", "VIP"];
 var premium = ["Estándar", "VIP"];
@@ -448,3 +485,4 @@ document.getElementById("categoria-omnibus").addEventListener("change", function
     selectAsiento.appendChild(option);
   }
 }, false);
+
