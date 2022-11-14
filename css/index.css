@@ -239,6 +239,24 @@ ol {
     position: relative;
 }
 
+#seleccion-excursiones select{
+  max-width: 250px;
+	position: relative;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+    margin: 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0; 
+	font-size: 1em;
+	color: #ff0080;
+	border:2px solid rgb(230, 196, 3);
+    border-radius: 20px;
+    position: relative;
+}
+
 input[type="date"] {
   max-width: 250px;
 	position: relative;
@@ -258,6 +276,34 @@ input[type="date"] {
 }
 
 #cargar-pasajes{
+  width: 150px;
+	background-color: #4cbdea;
+    color: white;
+    font-weight: 500;
+    font-size: 14pt;
+	margin-top: 30px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+#cargar-paquetes{
+  width: 150px;
+	background-color: #4cbdea;
+    color: white;
+    font-weight: 500;
+    font-size: 14pt;
+	margin-top: 30px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+#cargar-excursiones{
   width: 150px;
 	background-color: #4cbdea;
     color: white;
