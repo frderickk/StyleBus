@@ -430,7 +430,7 @@ document.getElementById("categoria-omnibus-paq").addEventListener("change", func
 }, false);
 
 document.getElementById("categoria-omnibus").addEventListener("change", function(e){
-  var selectAsiento = document.getElementById("nombre-exc");
+  var selectAsiento = document.getElementById("categoria-asiento");
   selectAsiento.innerHTML = "";
   var aItems = [];
   if(this.value == "Estandar"){
@@ -442,8 +442,6 @@ document.getElementById("categoria-omnibus").addEventListener("change", function
   else if(this.value == "Premium"){
     aItems = premium;
   }
-  console.log(aItems);
-  console.log(selectAsiento);
   for(var i = 0, len = aItems.length; i<len; i++) {
     var option = document.createElement("option");
     option.value = (i+1);
