@@ -118,6 +118,34 @@ validarPasajes=() =>{
             button: "Volver a ingresar dato",
           });
 
-        } 
+        }
 
+  const div = document.getElementById("cargar-pasajes");
+  const precioAdulto = 1;
+  const precioMenor = 0.75; 
+  const precioDisca = 0.5; 
+  const precio = 50000;
+    div.innerHTML=`
+    <div class="col">
+      <div class="card" style="">
+        <div class="card-body">
+          <h5 class="card-title">${terminalSalida} a ${terminalDestino}</h5>
+          <p class="card-text">El viaje de ${terminalSalida} a ${terminalDestino} tiene un valor de ${precio*cantidadAdultos*precioAdulto} pesos!</p>
+          <a  class="btn btn-primary" id="pasaje1">Comprar</a>
+        </div>
+      </div>
+    </div>
+    `;
+    pasaje1.addEventListener("click",(e)=>{
+      e.preventDefault();
+      if(localStorage.getItem("inicio")=="true"){
+          alert("Compra realizada");
+      }
+      else{
+          alert("Debe iniciar sesión para comprar un producto!");
+          /*window.location.href="inicioSesion.html";*/
+      }
+  });
+
+  
 }
