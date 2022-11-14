@@ -8,6 +8,24 @@ registrar=() =>{
     const rdomicilio= document.getElementById("rdomicilio").value;
     const rdni= document.getElementById("rdni").value;
 
+    const rtarjeta= document.getElementById("rtarjeta").value;
+    const nombreYApellido= document.getElementById("tnombres").value;
+
+    const cuentaMP= document.getElementById("rcuenta-mercado").value;
+
+    const CBUCVU= document.getElementById("rnumero-bancaria").value;
+    const DNI= document.getElementById("rdni-bancaria").value;
+
+    const expresionesMetodosDePago = {
+        letras: /[a-zA-Z]/,
+        vacio: /^$/,
+        numeros: /[0-9]/,
+        caracterEspecial: /[!-/:-@[-`{-■]/,
+        vacio: /^$/,
+        caracterEspecialMP: /^([\w-]|(?<!\.)\.)+[a-zA-Z0-9]@[a-zA-Z0-9]([a-zA-Z0-9\-]+)((\.([a-zA-Z]){2,9}){0,2})$/,
+        vacio: /^$/
+         }
+
     const expresionesNombres = {
           numeros: /[0-9]/,
           caracterEspecial: /[!-/:-@[-`{-■]/,
@@ -286,6 +304,92 @@ registrar=() =>{
             button: "Volver a ingresar dato",
           }); 
     }
+         //Validacion todos los campos de metodo de pago vacio
+
+    else if(expresionesMetodosDePago.vacio.test(rtarjeta) && expresionesMetodosDePago.vacio.test(nombreYApellido) && expresionesMetodosDePago.vacio.test(CBUCVU) && expresionesMetodosDePago.vacio.test(DNI) && expresionesMetodosDePago.vacio.test(cuentaMP)){
+        swal({
+            title: "Debe seleccionar un metodo de pago",
+            text: "",
+            icon: "warning",
+            button: "Volver a ingresar dato",
+          }); 
+    }
+
+    //Validacion tarjeta de credito
+
+    else if((rtarjeta.length >0 && rtarjeta.length < 16) ||(rtarjeta.length >16 ) || expresionesMetodosDePago.letras.test(rtarjeta) || expresionesMetodosDePago.caracterEspecial.test(rtarjeta) || expresionesMetodosDePago.numeros.test(nombreYApellido) || expresionesMetodosDePago.caracterEspecial.test(nombreYApellido)  || expresionesMetodosDePago.length>20){
+    swal({
+        title: "Hay un error en los datos de tarjeta de credito",
+        text: "",
+        icon: "warning",
+        button: "Volver a ingresar dato",
+      });
+     }
+
+else if(expresionesMetodosDePago.vacio.test(rtarjeta) && !expresionesMetodosDePago.vacio.test(nombreYApellido)){
+    swal({
+        title: "Hay un error en los datos de tarjeta de credito",
+        text: "",
+        icon: "warning",
+        button: "Volver a ingresar dato",
+      });
+
+}
+
+else if(!expresionesMetodosDePago.vacio.test(rtarjeta) && expresionesMetodosDePago.vacio.test(nombreYApellido)){
+    swal({
+        title: "Hay un error en los datos de tarjeta de credito",
+        text: "",
+        icon: "warning",
+        button: "Volver a ingresar dato",
+      });
+
+}
+
+//Validacion cuenta bancaria
+
+else if(CBUCVU.length>22 ||  (CBUCVU.length<22 && CBUCVU.length >0)|| expresionesMetodosDePago.caracterEspecial.test(CBUCVU) ||expresionesMetodosDePago.letras.test(CBUCVU) ||(DNI.length<7 && DNI.length >0) || DNI.length>8 || expresionesMetodosDePago.letras.test(DNI) ||expresionesMetodosDePago.caracterEspecial.test(DNI)){
+    swal({
+        title: "Hay un error en los datos de cuenta bancaria",
+        text: "",
+        icon: "warning",
+        button: "Volver a ingresar dato",
+      });
+}
+
+  
+
+else if(expresionesMetodosDePago.vacio.test(CBUCVU) && !expresionesMetodosDePago.vacio.test(DNI)){
+    swal({
+        title: "Hay un error en los datos de  cuenta bancaria",
+        text: "",
+        icon: "warning",
+        button: "Volver a ingresar dato",
+      });
+
+}
+
+else if(!expresionesMetodosDePago.vacio.test(CBUCVU) && expresionesMetodosDePago.vacio.test(DNI)){
+    swal({
+        title: "Hay un error en los datos  de cuenta bancaria",
+        text: "",
+        icon: "warning",
+        button: "Volver a ingresar dato",
+      });
+
+}
+
+//Validacion mercado pago
+
+else if (!expresionesMetodosDePago.caracterEspecialMP.test(cuentaMP) && cuentaMP.length>0){
+    swal({
+        title: "Hay un error en los datos de Mercado pago",
+        text: "",
+        icon: "warning",
+        button: "Volver a ingresar dato",
+      }); 
+  }    
+
 
     else{
 
@@ -297,6 +401,8 @@ registrar=() =>{
             window.location = "compra.html";
         });}
     
+
+   
 }
 
 
