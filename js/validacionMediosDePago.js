@@ -106,7 +106,7 @@ validarTarjetaMercado=() =>{
 
 if (!expresionesEmail.caracterEspecial.test(cuentaMP)){
   swal({
-      title: "No se permite utilizar caracteres especiales en el email",
+      title: "El formato del email no es valido",
       text: "",
       icon: "warning",
       button: "Volver a ingresar dato",
