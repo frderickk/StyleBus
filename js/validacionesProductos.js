@@ -13,7 +13,6 @@ function habilitarCheckIdaVuelta() {
   }
 }
 
-
 validarPasajes=() =>{
     
     const terminalSalida= document.getElementById("ter-salida").value;
@@ -129,7 +128,7 @@ validarPasajes=() =>{
     <div class="col">
       <div class="card" style="">
         <div class="card-body">
-          <h5 class="card-title">${terminalSalida} a ${terminalDestino}</h5>
+          <h5 class="card-title">Ver disponibilidad</h5>
           <p class="card-text">El viaje de ${terminalSalida} a ${terminalDestino} tiene un valor de ${precio*cantidadAdultos*precioAdulto} pesos!</p>
           <a  class="btn btn-primary" id="pasaje1">Comprar</a>
         </div>
@@ -149,3 +148,55 @@ validarPasajes=() =>{
 
   
 }
+
+var estandar = ["Estándar"];
+var estandarPlus = ["Estándar", "VIP"];
+var premium = ["Estándar", "VIP"];
+
+document.getElementById("categoria-omnibus").addEventListener("change", function(e){
+  var selectAsiento = document.getElementById("categoria-asiento");
+  selectAsiento.innerHTML = "";
+  var aItems = [];
+  if(this.value == "Estandar"){
+    aItems = estandar;
+  }
+  else if(this.value == "Estandar plus"){
+    aItems = estandarPlus;
+  }
+  else if(this.value == "Premium"){
+    aItems = premium;
+  }
+  console.log(aItems);
+  console.log(selectAsiento);
+  for(var i = 0, len = aItems.length; i<len; i++) {
+    var option = document.createElement("option");
+    option.value = (i+1);
+    var textNode = document.createTextNode(aItems[i]);
+    option.appendChild(textNode);
+    selectAsiento.appendChild(option);
+  }
+}, false);
+
+document.getElementById("categoria-omnibus-paq").addEventListener("change", function(e){
+  var selectAsiento = document.getElementById("categoria-asiento-paq");
+  selectAsiento.innerHTML = "";
+  var aItems = [];
+  if(this.value == "Estandar"){
+    aItems = estandar;
+  }
+  else if(this.value == "Estandar plus"){
+    aItems = estandarPlus;
+  }
+  else if(this.value == "Premium"){
+    aItems = premium;
+  }
+  console.log(aItems);
+  console.log(selectAsiento);
+  for(var i = 0, len = aItems.length; i<len; i++) {
+    var option = document.createElement("option");
+    option.value = (i+1);
+    var textNode = document.createTextNode(aItems[i]);
+    option.appendChild(textNode);
+    selectAsiento.appendChild(option);
+  }
+}, false);
