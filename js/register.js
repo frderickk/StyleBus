@@ -257,7 +257,7 @@ registrar=() =>{
 
     else if (!expresionesEmail.caracterEspecial.test(email)){
         swal({
-            title: "No se permite utilizar caracteres especiales en el email",
+            title: "No es un email valido",
             text: "",
             icon: "warning",
             button: "Volver a ingresar dato",
