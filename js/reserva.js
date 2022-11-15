@@ -13,7 +13,7 @@ continuar=() =>{
           }
           const expresionesApellidos = {
             numeros: /[0-9]/,
-            caracterEspecial: /[ -/:-@[-`{-■]/,
+            caracterEspecial: /[!-/:-@[-`{-■]/,
             vacio: /^$/
         }
 
