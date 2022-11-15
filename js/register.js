@@ -59,8 +59,19 @@ registrar=() =>{
         noTieneMayus: /[A-Z]/,
         vacio: /^$/
     }
+             /* ------------validacion de todos los campos vacios---------- */
 
-    if (expresionesNombres.vacio.test(rnombre)){
+             if (expresionesNombres.vacio.test(rnombre) && expresionesApellidos.vacio.test(rapellido) && expresionesDNI.vacio.test(rdni) && 
+             expresionesDomicilios.vacio.test(rdomicilio) && expresionesEmail.vacio.test(email) && expresionesPassword.vacio.test(password)){
+             swal({
+                 title: "Los campos no deben estar vacios",
+                 text: "",
+                 icon: "warning",
+                 button: "Volver a ingresar dato",
+               }); 
+         }
+
+    else if(expresionesNombres.vacio.test(rnombre)){
         swal({
             title: "No se permite dejar vacío el nombre",
             text: "",
@@ -246,7 +257,7 @@ registrar=() =>{
 
     else if (!expresionesEmail.caracterEspecial.test(email)){
         swal({
-            title: "El formato del email no es valido",
+            title: "No se permite utilizar caracteres especiales en el email",
             text: "",
             icon: "warning",
             button: "Volver a ingresar dato",
@@ -293,17 +304,7 @@ registrar=() =>{
           }); 
     } 
 
-         /* ------------validacion de todos los campos vacios---------- */
 
-    else if (expresionesNombres.vacio.test(rnombre) && expresionesApellidos.vacio.test(rapellido) && expresionesDNI.vacio.test(rdni) && 
-        expresionesDomicilios.vacio.test(rdomicilio) && expresionesEmail.vacio.test(email) && expresionesPassword.vacio.test(password)){
-        swal({
-            title: "Los campos no deben estar vacios",
-            text: "",
-            icon: "warning",
-            button: "Volver a ingresar dato",
-          }); 
-    }
          //Validacion todos los campos de metodo de pago vacio
 
     else if(expresionesMetodosDePago.vacio.test(rtarjeta) && expresionesMetodosDePago.vacio.test(nombreYApellido) && expresionesMetodosDePago.vacio.test(CBUCVU) && expresionesMetodosDePago.vacio.test(DNI) && expresionesMetodosDePago.vacio.test(cuentaMP)){
