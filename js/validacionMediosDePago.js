@@ -104,15 +104,6 @@ validarTarjetaMercado=() =>{
     vacio: /^$/
 }
 
-if (!expresionesEmail.caracterEspecial.test(cuentaMP)){
-  swal({
-      title: "El formato del email no es valido",
-      text: "",
-      icon: "warning",
-      button: "Volver a ingresar dato",
-    }); 
-}
-
 if (expresionesEmail.vacio.test(cuentaMP)){
   swal({
       title: "No se permite dejar vacío el email",
@@ -121,6 +112,24 @@ if (expresionesEmail.vacio.test(cuentaMP)){
       button: "Volver a ingresar dato",
     }); 
 } 
+
+else if (!expresionesEmail.caracterEspecial.test(cuentaMP)){
+  swal({
+      title: "El formato del email no es valido",
+      text: "",
+      icon: "warning",
+      button: "Volver a ingresar dato",
+    }); 
+}
+else{
+
+  swal({
+      title: "Registrado con exito",
+      text: "",
+      icon: "success",
+      button: "Aceptar"
+      });
+  }
     
      }
 

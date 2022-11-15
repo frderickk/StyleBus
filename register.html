@@ -11,8 +11,19 @@
 </head>
 
 <body>
+    <header>
+        <div>
+            <div id="barra">
+                <ul class="barraNav">
+                    <li><a class="actual" href="index.html">Home</a></li>
+                </ul>
+            </div>
+            <h1>Style Bus</h1>
+            <br>
+        </div>
+    </header>
     <h1 id="titulo"> Crea tu cuenta</h1>
-    <form id="form">
+    <form id="form-registro">
         <div class="grid" id="rcontenedor-formulario-principal">
             <br>
             <span > Nombre </span>
@@ -64,9 +75,13 @@
          <div id="rcontenedor-formulario-tarjeta"class="grid" style="display:none">
            
             <span>Número de tarjeta </span>
+            <br>
             <input id="rtarjeta" type="text" placeholder="16 numeros" />
+            <br>
             <span>Nombre del titular </span>
+            <br>
             <input type="text" id="tnombres" onclick="" placeholder="tal cual este en la tarjeta" /> 
+            <br>
             <span>Fecha de vencimiento </span>
                 <div>
                     <label for="validation-form-mes-venc-tc">Mes</label>
@@ -112,29 +127,34 @@
                 </div>
              
 
-            <input type="button" onclick="validartarjeta()" value="confirmar" class="boton"  />
+            <input type="button" onclick="validartarjeta()" value="Confirmar" class="boton"  />
             <div></div>
-            <input type="button" onclick="volveratras()" value="atras" class="btn-atras"/>
+            <input type="button" onclick="volveratras()" value="Atras" class="btn-atras"/>
        </div>
 
        <div id="rcontenedor-formulario-tarjeta-mercado"class="grid" style="display:none">
            
         <span>Cuenta </span>
+        <br>
         <input id="rcuenta-mercado" type="email" />
-        
-        <input type="button" onclick="validarTarjetaMercado()" value="confirmar" class="boton"  />
-        <input type="button" onclick="volveratras()" value="atras" class="btn-atras"/>
+        <br>
+        <input type="button" onclick="validarTarjetaMercado()" value="Confirmar" class="boton"  />
+        <input type="button" onclick="volveratras()" value="Atras" class="btn-atras"/>
    </div>
 
 
    <div id="rcontenedor-formulario-tarjeta-bancaria"class="grid" style="display:none">
            
     <span>CBU/CVU </span>
+    <br>
     <input id="rnumero-bancaria"type="text" />
+    <br>
     <span>DNI del titular de la cuenta </span>
+    <br>
     <input id="rdni-bancaria"type="text" />
-    <input type="button" onclick="validarTarjetaBancaria()" value="confirmar" class="boton"  />
-    <input type="button" onclick="volveratras()" value="atras" class="btn-atras"/>
+    <br>
+    <input type="button" onclick="validarTarjetaBancaria()" value="Confirmar" class="boton"  />
+    <input type="button" onclick="volveratras()" value="Atras" class="btn-atras"/>
 </div>
     </form>
             <script src="js/register.js"></script>
