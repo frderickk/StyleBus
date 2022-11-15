@@ -14,10 +14,20 @@ loguearse=() =>{
         noTieneMayus: /[A-Z]/,
         vacio: /^$/
     }
+  /* ------------validacion de todos los campos vacios---------- */
+
+    if (expresionesEmail.vacio.test(lemail) && expresionesPassword.vacio.test(lcontraseña)){
+                swal({
+                    title: "Los campos no deben estar vacios",
+                    text: "",
+                    icon: "warning",
+                    button: "Volver a ingresar dato",
+                  }); 
+            }
 
     /* ---------------email---------- */
 
-    if (expresionesEmail.vacio.test(lemail)){
+    else if (expresionesEmail.vacio.test(lemail)){
         swal({
             title: "No se permite dejar vacío el email",
             text: "",
@@ -75,16 +85,6 @@ loguearse=() =>{
           }); 
     } 
 
-         /* ------------validacion de todos los campos vacios---------- */
-
-    else if (expresionesEmail.vacio.test(lemail) && expresionesPassword.vacio.test(lcontraseña)){
-        swal({
-            title: "Los campos no deben estar vacios",
-            text: "",
-            icon: "warning",
-            button: "Volver a ingresar dato",
-          }); 
-    }
     else {
         swal({
             title: "Login exitoso",

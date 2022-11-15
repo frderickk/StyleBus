@@ -12,3 +12,14 @@ function habilitarCheckCupon() {
         element.style.display='block';
     }
   }
+
+comprar=() =>{
+
+    swal({
+        title: "Compra exitosa",
+        text: "",
+        icon: "success",
+        button: "Aceptar",
+        });
+
+ }
