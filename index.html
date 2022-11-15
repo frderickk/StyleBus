@@ -13,10 +13,6 @@
             <div id="barra">
                 <ul class="barraNav">
                     <li><a class="actual" href="index.html">Home</a></li>
-                    <!--<li><a href="paquetes.html">Paquetes</a></li>
-                    <li><a href="excursiones.html">Excursiones</a></li>-->
-                    <!--<li><a href="faqs.html">FAQs</a></li>-->
-                    <li><a href="login.html">Login</a></li>
                 </ul>
             </div>
             <h1>Style Bus</h1>
@@ -32,7 +28,7 @@
             </ul>
         </div>
         <div>
-            <form initialValue="empty">
+            <form>
              <!--Formulario Pasajes-->
                 <div class="grid" id="contenedor-formulario-pasajes">
                     <div id="seleccion-terminales">
@@ -112,7 +108,11 @@
                     </div>
                     <div>
                       <!----     <button type="button" onclick="validarPasajes()" id="cargar-pasajes" class="btn btn-primary">Ver disponibilidad</button>--> 
-                        <button type="button" onclick="validarPasajes()" id="cargar-pasajes" value = "Ver disponibilidad" class="btn btn-primary">Ver disponibilidad</button>
+                      <input type="reset" value="Borrar formulario"/>
+                      <br>
+                      <button type="button" onclick="validarPasajes()" id="cargar-pasajes" value = "Ver disponibilidad" class="btn btn-primary">Ver disponibilidad</button>
+                        <br>
+                        
                     </div>
                 </div>
 
