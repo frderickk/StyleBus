@@ -1,1 +1,3 @@
-# TP-EVS-GRUPO-4-NO-6
+# StyleBus
+
+Prototipo para gestionar la compra de pasajes y paquetes de viajes en algunas ciudades de Argentina.
